@@ -1,3 +1,3 @@
 ﻿namespace PerfectWorldBot.Offset {
-    internal class MonsterOffsets : NpcOffsets {}
+    public class MonsterOffsets : NpcOffsets {}
 }

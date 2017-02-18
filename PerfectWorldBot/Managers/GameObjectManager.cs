@@ -72,14 +72,16 @@ namespace PerfectWorldBot.Managers {
                 if (_cachedObjects.ContainsKey(id)) {
                     // noting
                 } else {
-                    if (_cachedObjects.TryAdd(id, gObject)) { /*Logging.Log($"Add: {gObject}");*/
+                    if (_cachedObjects.TryAdd(id, gObject)) {
+                        /*Logging.Log($"Add: {gObject}");*/
                     }
                 }
             }
             foreach (var obj in _cachedObjects) {
                 var gameObjectTmp = obj.Value;
                 if ((gameObjectTmp == null) || gameObjectTmp.IsValid) continue;
-                if (_cachedObjects.TryRemove(obj.Key, out gameObjectTmp)) { /*Logging.Log($"Remove: {gameObjectTmp}");*/
+                if (_cachedObjects.TryRemove(obj.Key, out gameObjectTmp)) {
+                    /*Logging.Log($"Remove: {gameObjectTmp}");*/
                 }
             }
         }

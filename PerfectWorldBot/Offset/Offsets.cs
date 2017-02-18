@@ -1,13 +1,13 @@
 ﻿namespace PerfectWorldBot.Offset {
-    internal class Offsets {
-        internal ElsePlayerOffsets ElsePlayer = new ElsePlayerOffsets();
-        internal GameFunctions Function = new GameFunctions();
-        internal HostPlayerOffsets HostPlayer = new HostPlayerOffsets();
-        internal MonsterOffsets Monster = new MonsterOffsets();
+    public class Offsets {
+        public ElsePlayerOffsets ElsePlayer = new ElsePlayerOffsets();
+        public GameFunctions Function = new GameFunctions();
+        public HostPlayerOffsets HostPlayer = new HostPlayerOffsets();
+        public MonsterOffsets Monster = new MonsterOffsets();
 
-        internal NpcOffsets Npc = new NpcOffsets();
-        internal NpcServerOffsets NpcServer = new NpcServerOffsets();
-        internal ObjectPointer Objects = new ObjectPointer();
-        internal PlayerOffsets Player = new PlayerOffsets();
+        public NpcOffsets Npc = new NpcOffsets();
+        public NpcServerOffsets NpcServer = new NpcServerOffsets();
+        public ObjectPointer Objects = new ObjectPointer();
+        public PlayerOffsets Player = new PlayerOffsets();
     }
 }

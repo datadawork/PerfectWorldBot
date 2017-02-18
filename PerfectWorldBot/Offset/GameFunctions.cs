@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace PerfectWorldBot.Offset {
-    internal class GameFunctions {
-        internal readonly IntPtr SendPacket = new IntPtr(0x007B8970);
+    public class GameFunctions {
+        public readonly IntPtr SendPacket = new IntPtr(0x007B8970);
     }
 }
