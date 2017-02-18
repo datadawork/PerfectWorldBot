@@ -1,0 +1,53 @@
+﻿namespace PerfectWorldBot.Offset {
+    internal class PlayerOffsets {
+        internal int Accuracy = 0x540;
+        internal int AttackLevel = 0x4e4;
+        internal int AttackRate = 0x54c;
+        internal int Chi = 0x4e0;
+        internal int Chi_Max = 0x5a0;
+        internal int ClassID = 0x6f8;
+        internal int CriticalRate = 0x4ec;
+        internal int Cultivation = 0x4c8;
+        internal int DefenseLevel = 0x4e8;
+        internal int Dexterity = 0x51c;
+        internal int ElemDef1 = 0x584;
+        internal int ElemDef2 = 0x588;
+        internal int ElemDef3 = 0x58c;
+        internal int ElemDef4 = 0x590;
+        internal int ElemDef5 = 0x594;
+        internal int Evasion = 0x59c;
+        internal int Gold = 0x5a8;
+        internal int Magic = 0x514;
+        internal int MagicalPen = 0x50c;
+        internal int MagicAtk_Max = 0x580;
+        internal int MagicAtk_Min = 0x57c;
+        internal int MP = 0x4d0;
+        internal int MP_Max = 0x524;
+        internal int PhysAtk_Max = 0x548;
+        internal int PhysAtk_Min = 0x544;
+        internal int PhysicalDef = 0x598;
+        internal int PhysicalPen = 0x508;
+        internal int Points = 0x4dc;
+        internal int RageDamage = 0x4f0;
+        internal int SlayingLevel = 0x4fc;
+        internal int Speed = 0x534;
+        internal int Spirit_Skills = 0x4d8;
+        internal int Sprit_Stats = 0x504;
+        internal int StealthDetection = 0x4f8;
+        internal int StealthLevel = 0x4f4;
+        internal int Strength = 0x518;
+        internal int TargetID = 0x5a4;
+        internal int Vitality = 0x510;
+        internal int WardingLevel = 0x500;
+        internal int XP = 0x4d4;
+        internal int HP => 0x4cc;
+        internal int HP_Max => 0x520;
+        internal int Level => 0x4c4;
+        //internal IntPtr PlayerManPtr = (IntPtr)0x3B4; 
+        internal int ID => 0x4b8;
+        internal int NamePtr => 0x6f4;
+        internal int X => 0x3c;
+        internal int Y => 0x44;
+        internal int Z => 0x40;
+    }
+}
