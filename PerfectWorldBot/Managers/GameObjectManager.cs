@@ -49,10 +49,8 @@ namespace PerfectWorldBot.Managers {
             }
         }
 
-        public static GameObject GetObjectByObjectId(uint ObjectId) {
-            GameObject gameObject;
-            _cachedObjects.TryGetValue(ObjectId, out gameObject);
-            return gameObject;
+        public static GameObject GetObjectById(uint ObjectId) {
+            return GameObjects.FirstOrDefault(o => o.ObjectId == ObjectId);
         }
 
         public static T GetObjectById<T>(uint id) where T : GameObject {

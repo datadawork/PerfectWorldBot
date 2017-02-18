@@ -12,6 +12,7 @@ namespace PerfectWorldBot {
         private static BackgroundWorker bwBot = new BackgroundWorker();
         internal static MemorySharp Memory { get; private set; }
         internal static Offsets Offsets { get; private set; }
+
         public static HostPlayer Me => GameObjectManager.HostPlayer;
         public static HostPlayer HostPlayer => GameObjectManager.HostPlayer;
 
@@ -52,7 +53,9 @@ namespace PerfectWorldBot {
                 } catch (Exception) {
                     //ignore
                 }*/
-                GameObjectManager.Update();
+                if (IsInGame) {
+                    GameObjectManager.Update();
+                }
                 Thread.Sleep(25);
             }
             IsRunning = false;

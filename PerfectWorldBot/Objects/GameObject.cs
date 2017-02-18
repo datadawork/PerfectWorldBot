@@ -77,7 +77,7 @@ namespace PerfectWorldBot.Objects {
         public virtual uint Level => 0u;
         public virtual uint CurrentTargetId => 0u;
         public virtual bool HasTarget => CurrentTargetId != 0u;
-        public virtual GameObject CurrentTarget => GameObjectManager.GetObjectByObjectId(CurrentTargetId);
+        public virtual GameObject CurrentTarget => GameObjectManager.GetObjectById(CurrentTargetId);
 
         #endregion
 

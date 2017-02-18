@@ -1,7 +1,5 @@
 ﻿using System;
-using System.IO;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 
 namespace PerfectWorldBot {
     public partial class FormMainBot : Form {
@@ -34,7 +32,10 @@ namespace PerfectWorldBot {
 
         private void buttonStartStop_Click(object sender, EventArgs e) {
             if (Core.IsRunning) Core.Stop();
-            else Core.Start();
+            else {
+                if (!Core.IsInGame) return;
+                Core.Start();
+            }
         }
 
         private void FormMainBot_Shown(object sender, EventArgs e) {
@@ -47,11 +48,12 @@ namespace PerfectWorldBot {
         }
 
         private void button1_Click(object sender, EventArgs e) {
+            if (!Core.IsInGame) return;
             Logging.Clear();
             if (!Core.Me.HasTarget) Logging.Log($"No Target");
             else {
                 var o = Core.Me.CurrentTarget;
-                Logging.Log($"Target: {o.GetType().Name}, {o.CurrentPosition}");
+                Logging.Log($"Target: {o}\nPosition: {o.CurrentPosition}");
             }
         }
     }
