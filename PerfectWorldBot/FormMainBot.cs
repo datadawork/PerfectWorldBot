@@ -52,7 +52,10 @@ namespace PerfectWorldBot {
         private void button1_Click(object sender, EventArgs e) {
             if (!Core.IsInGame) return;
             Logging.Clear();
-            PacketManager.ClearTarget();
+            //PacketManager.ClearTarget();
+            var target = Core.Me.CurrentTarget ?? Core.Me;
+            Logging.Log($"Casting Spell: {1381:X}\nTarget: {target}");
+            PacketManager.UseSkillOnTargetId(1381, target.ObjectId);
         }
     }
 }
