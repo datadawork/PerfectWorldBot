@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PerfectWorldBot.Offset {
+namespace PerfectWorldBot.Offsets {
     public class ObjectPointer {
         public readonly int Base = 0x00DA433C;
 

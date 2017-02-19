@@ -57,6 +57,22 @@ namespace PerfectWorldBot.Managers {
             return GameObjects.FirstOrDefault(o => o.ObjectId == id) as T;
         }
 
+        public static List<T> GetObjectsByName<T>(string Name) where T : GameObject {
+            return new List<T>(GameObjects.Where(o => o.GetType() == typeof(T) && o.Name == Name).Select(o => o as T));
+        }
+
+        public static List<GameObject> GetObjectsByName(string Name) {
+            return new List<GameObject>(GameObjects.Where(o => o.Name == Name));
+        }
+
+        public static T GetObjectByName<T>(string Name) where T: GameObject {
+            return GetObjectByName(Name) as T;
+        }
+
+        public static GameObject GetObjectByName(string Name) {
+            return GameObjects.FirstOrDefault(o => o.Name == Name);
+        }
+
         public static IEnumerable<T> GetObjectsByType<T>() where T : GameObject {
             return
                 GameObjects.Where(o => (o.GetType() == typeof(T)) || (o.GetType().BaseType == typeof(T)))

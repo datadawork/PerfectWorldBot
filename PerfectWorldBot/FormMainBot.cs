@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using PerfectWorldBot.Managers;
+using PerfectWorldBot.Objects;
 
 namespace PerfectWorldBot {
     public partial class FormMainBot : Form {
@@ -50,11 +52,7 @@ namespace PerfectWorldBot {
         private void button1_Click(object sender, EventArgs e) {
             if (!Core.IsInGame) return;
             Logging.Clear();
-            if (!Core.Me.HasTarget) Logging.Log($"No Target");
-            else {
-                var o = Core.Me.CurrentTarget;
-                Logging.Log($"Target: {o}\nPosition: {o.CurrentPosition}");
-            }
+            PacketManager.ClearTarget();
         }
     }
 }

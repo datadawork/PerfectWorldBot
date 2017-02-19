@@ -87,6 +87,7 @@
       <DependentUpon>FormMainBot.cs</DependentUpon>
     </Compile>
     <Compile Include="Managers\GameObjectManager.cs" />
+    <Compile Include="Managers\PacketManager.cs" />
     <Compile Include="Objects\ElsePlayer.cs" />
     <Compile Include="Objects\Monster.cs" />
     <Compile Include="Objects\NpcServer.cs" />
@@ -95,15 +96,15 @@
     <Compile Include="Objects\HostPlayer.cs" />
     <Compile Include="Objects\Npc.cs" />
     <Compile Include="Objects\RemoteObject.cs" />
-    <Compile Include="Offset\ElsePlayerOffsets.cs" />
-    <Compile Include="Offset\GameFunctions.cs" />
-    <Compile Include="Offset\HostPlayerOffsets.cs" />
-    <Compile Include="Offset\MonsterOffsets.cs" />
-    <Compile Include="Offset\NpcOffsets.cs" />
-    <Compile Include="Offset\NpcServerOffsets.cs" />
-    <Compile Include="Offset\ObjectPointer.cs" />
-    <Compile Include="Offset\Offsets.cs" />
-    <Compile Include="Offset\PlayerOffsets.cs" />
+    <Compile Include="Offsets\ElsePlayerOffsets.cs" />
+    <Compile Include="Offsets\GameFunctions.cs" />
+    <Compile Include="Offsets\HostPlayerOffsets.cs" />
+    <Compile Include="Offsets\MonsterOffsets.cs" />
+    <Compile Include="Offsets\NpcOffsets.cs" />
+    <Compile Include="Offsets\NpcServerOffsets.cs" />
+    <Compile Include="Offsets\ObjectPointer.cs" />
+    <Compile Include="Offsets\Offsets.cs" />
+    <Compile Include="Offsets\PlayerOffsets.cs" />
     <Compile Include="Logging.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

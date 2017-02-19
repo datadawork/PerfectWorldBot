@@ -1,4 +1,4 @@
-﻿namespace PerfectWorldBot.Offset {
+﻿namespace PerfectWorldBot.Offsets {
     public class PlayerOffsets {
         public int Accuracy = 0x540;
         public int AttackLevel = 0x4e4;

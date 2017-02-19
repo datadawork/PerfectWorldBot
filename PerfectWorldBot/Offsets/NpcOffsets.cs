@@ -1,4 +1,4 @@
-﻿namespace PerfectWorldBot.Offset {
+﻿namespace PerfectWorldBot.Offsets {
     public class NpcOffsets {
         public int HP => 0x128;
         public int HP_Max => 0x17c;

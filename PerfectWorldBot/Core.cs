@@ -5,13 +5,12 @@ using System.Threading;
 using Binarysharp.MemoryManagement;
 using PerfectWorldBot.Managers;
 using PerfectWorldBot.Objects;
-using PerfectWorldBot.Offset;
 
 namespace PerfectWorldBot {
     public static class Core {
         private static BackgroundWorker bwBot = new BackgroundWorker();
         internal static MemorySharp Memory { get; private set; }
-        internal static Offsets Offsets { get; private set; }
+        internal static Offsets.Offsets Offsets { get; private set; }
 
         public static HostPlayer Me => GameObjectManager.HostPlayer;
         public static HostPlayer HostPlayer => GameObjectManager.HostPlayer;
@@ -32,7 +31,7 @@ namespace PerfectWorldBot {
                 return false;
             }
 
-            Offsets = new Offsets();
+            Offsets = new Offsets.Offsets();
 
             bwBot.WorkerSupportsCancellation = true;
             bwBot.DoWork += bwBotDoWork;
