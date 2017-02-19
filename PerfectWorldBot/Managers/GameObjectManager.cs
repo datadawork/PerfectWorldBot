@@ -7,12 +7,9 @@ using PerfectWorldBot.Objects;
 
 namespace PerfectWorldBot.Managers {
     public static class GameObjectManager {
-        //static GameObjectManager() { }
+
         private static HostPlayer _hostPlayer;
-
-        private static ConcurrentDictionary<uint, GameObject> _cachedObjects =
-            new ConcurrentDictionary<uint, GameObject>();
-
+        
         public static HostPlayer HostPlayer {
             get {
                 if (_hostPlayer != null) return _hostPlayer;
@@ -23,7 +20,7 @@ namespace PerfectWorldBot.Managers {
             }
         }
 
-        public static IEnumerable<GameObject> GameObjects => _cachedObjects.Values as IEnumerable<GameObject>;
+        public static IEnumerable<GameObject> GameObjects => GetRawObjects().Where(o=> o != null && o.IsValid);
 
         private static IEnumerable<GameObject> GetRawObjects() {
             yield return HostPlayer;
@@ -77,27 +74,6 @@ namespace PerfectWorldBot.Managers {
             return
                 GameObjects.Where(o => (o.GetType() == typeof(T)) || (o.GetType().BaseType == typeof(T)))
                     .Select(o => o as T);
-        }
-
-        public static void Update() {
-            foreach (var gObject in GetRawObjects()) {
-                if ((gObject == null) || !gObject.IsValid) continue;
-                var id = gObject.ObjectId;
-                if (_cachedObjects.ContainsKey(id)) {
-                    // noting
-                } else {
-                    if (_cachedObjects.TryAdd(id, gObject)) {
-                        /*Logging.Log($"Add: {gObject}");*/
-                    }
-                }
-            }
-            foreach (var obj in _cachedObjects) {
-                var gameObjectTmp = obj.Value;
-                if ((gameObjectTmp == null) || gameObjectTmp.IsValid) continue;
-                if (_cachedObjects.TryRemove(obj.Key, out gameObjectTmp)) {
-                    /*Logging.Log($"Remove: {gameObjectTmp}");*/
-                }
-            }
         }
     }
 }

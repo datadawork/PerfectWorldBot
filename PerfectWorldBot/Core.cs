@@ -47,14 +47,6 @@ namespace PerfectWorldBot {
             Logging.Log($"[CORE] Bot Started");
             // main loop
             while (!bw.CancellationPending) {
-                /*try {
-                    GameObjectManager.Update();
-                } catch (Exception) {
-                    //ignore
-                }*/
-                if (IsInGame) {
-                    GameObjectManager.Update();
-                }
                 Thread.Sleep(25);
             }
             IsRunning = false;
