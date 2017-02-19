@@ -9,6 +9,12 @@ namespace PerfectWorldBot.Managers {
             SendPacket(packetStr);
         }
 
+        public static void SelectTarget(uint targetId) {
+            targetId = ReverseBytes(targetId);
+            var packetStr = $"0200{targetId:X8}";
+            SendPacket(packetStr);
+        }
+
         public static void UseSkillOnTargetId(uint uSkillId, uint uTargetId) {
             uSkillId = ReverseBytes(uSkillId);
             uTargetId = ReverseBytes(uTargetId);

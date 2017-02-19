@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using PerfectWorldBot.Managers;
-using PerfectWorldBot.Objects;
 
 namespace PerfectWorldBot {
     public partial class FormMainBot : Form {
