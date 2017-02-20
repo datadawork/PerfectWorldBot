@@ -28,7 +28,7 @@ namespace PerfectWorldBot.Managers {
             var epCount = Core.Memory.ReadEx<int>(Core.Offsets.Objects.ElsePlayerListCountPtr);
             for (var i = 0; i < epCount; i++) {
                 var ptr = Core.Memory.ReadEx<IntPtr>(epList + i*4);
-                var type = (GameObjectType) Core.Memory.ReadEx<int>(ptr + 0xb4);
+                var type = (GameObjectType) Core.Memory.ReadEx<byte>(ptr + Core.Offsets.Objects.ObjectType);
                 if (type == GameObjectType.ElsePlayer)
                     yield return new ElsePlayer(ptr);
                 else if (type == GameObjectType.HostPlayer)
@@ -38,7 +38,7 @@ namespace PerfectWorldBot.Managers {
             var npcCount = Core.Memory.ReadEx<int>(Core.Offsets.Objects.NPCListCountPtr);
             for (var i = 0; i < npcCount; i++) {
                 var ptr = Core.Memory.ReadEx<IntPtr>(npcList + i*4);
-                var type = (GameObjectType) Core.Memory.ReadEx<int>(ptr + 0xb4);
+                var type = (GameObjectType) Core.Memory.ReadEx<byte>(ptr + Core.Offsets.Objects.ObjectType);
                 if (type == GameObjectType.NpcServer)
                     yield return new NpcServer(ptr);
                 else if (type == GameObjectType.Monster)

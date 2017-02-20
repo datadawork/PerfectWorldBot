@@ -4,6 +4,8 @@ namespace PerfectWorldBot.Offsets {
     public class ObjectPointer {
         public readonly int Base = 0x00DA433C;
 
+        public int ObjectType = 0xb4;
+
         public IntPtr Game => Core.Memory.ReadEx<IntPtr>((IntPtr) Base);
         public IntPtr GameRun => Core.Memory.ReadEx<IntPtr>(Game + 0x1C);
         public IntPtr World => Core.Memory.ReadEx<IntPtr>(GameRun + 0x14);

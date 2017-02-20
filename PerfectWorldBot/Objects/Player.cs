@@ -21,6 +21,6 @@ namespace PerfectWorldBot.Objects {
 
         public override uint Level => Core.Memory.ReadEx<uint>(Pointer + Core.Offsets.Player.Level);
 
-        public virtual PlayerClass Class => (PlayerClass) Core.Memory.ReadEx<int>(Pointer + Core.Offsets.Player.ClassID);
+        public virtual PlayerClass Class => (PlayerClass) Core.Memory.ReadEx<byte>(Pointer + Core.Offsets.Player.ClassID);
     }
 }

@@ -25,7 +25,7 @@ namespace PerfectWorldBot.Objects {
             }
         }
 
-        public GameObjectType Type => (GameObjectType) Core.Memory.ReadEx<int>(Pointer + 0xb4);
+        public GameObjectType Type => (GameObjectType) Core.Memory.ReadEx<byte>(Pointer + Core.Offsets.Objects.ObjectType);
 
         public string Name {
             get {

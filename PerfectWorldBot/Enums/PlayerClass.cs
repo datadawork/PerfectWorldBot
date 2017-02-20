@@ -1,5 +1,5 @@
 ﻿namespace PerfectWorldBot.Enums {
-    public enum PlayerClass {
+    public enum PlayerClass: byte {
         Warrior = 0,
         Wizard = 1,
         Psychic = 2,
