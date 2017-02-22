@@ -17,8 +17,12 @@ namespace PerfectWorldBot.Objects {
                         return Core.Memory.ReadEx<uint>(Pointer + Core.Offsets.ElsePlayer.ID);
                     case GameObjectType.Monster:
                         return Core.Memory.ReadEx<uint>(Pointer + Core.Offsets.Monster.ID);
+                    case GameObjectType.Pet:
+                        return Core.Memory.ReadEx<uint>(Pointer + Core.Offsets.Pet.ID);
                     case GameObjectType.NpcServer:
                         return Core.Memory.ReadEx<uint>(Pointer + Core.Offsets.NpcServer.ID);
+                    case GameObjectType.Matter:
+                        return Core.Memory.ReadEx<uint>(Pointer + Core.Offsets.Matter.ID);
                     default:
                         return 0u;
                 }
@@ -40,8 +44,14 @@ namespace PerfectWorldBot.Objects {
                     case GameObjectType.Monster:
                         p = Core.Memory.ReadEx<IntPtr>(Pointer + Core.Offsets.Monster.NamePtr);
                         break;
+                    case GameObjectType.Pet:
+                        p = Core.Memory.ReadEx<IntPtr>(Pointer + Core.Offsets.Pet.NamePtr);
+                        break;
                     case GameObjectType.NpcServer:
                         p = Core.Memory.ReadEx<IntPtr>(Pointer + Core.Offsets.NpcServer.NamePtr);
+                        break;
+                    case GameObjectType.Matter:
+                        p = Core.Memory.ReadEx<IntPtr>(Pointer + Core.Offsets.Matter.NamePtr);
                         break;
                 }
                 return p == IntPtr.Zero ? null : Core.Memory.ReadString(p, Encoding.Unicode, false);
@@ -58,7 +68,7 @@ namespace PerfectWorldBot.Objects {
 
         private bool IsValidName(string name) {
             if (string.IsNullOrWhiteSpace(name)) return false;
-            if (Encoding.UTF8.GetByteCount(name) != name.Length) return false;
+            if (Encoding.ASCII.GetByteCount(name) != name.Length) return false;
             if (Encoding.UTF8.GetByteCount(name) <= 1) return false;
             return true;
         }

@@ -13,9 +13,14 @@ namespace PerfectWorldBot.Offsets {
         public IntPtr PlayerMan => Core.Memory.ReadEx<IntPtr>(World + 0x1C);
         public IntPtr NPCMan => Core.Memory.ReadEx<IntPtr>(World + 0x20);
 
+        public IntPtr MatterMan => Core.Memory.ReadEx<IntPtr>(World + 0x24);
+
         public IntPtr ElsePlayerListPtr => PlayerMan + 0x98;
         public IntPtr ElsePlayerListCountPtr => PlayerMan + 0x9C;
         public IntPtr NPCListPtr => NPCMan + 0x5C;
         public IntPtr NPCListCountPtr => NPCMan + 0x60;
+
+        public IntPtr MatterListPtr => MatterMan + 0x1c;
+        public IntPtr MatterListCountPtr => MatterMan + 0x14;
     }
 }

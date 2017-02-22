@@ -4,6 +4,7 @@
         ElsePlayer = 3,
         Monster = 6,
         NpcServer = 7,
+        Matter = 8,
         Pet = 9
     }
 }

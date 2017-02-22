@@ -19,6 +19,8 @@ namespace PerfectWorldBot {
                 return _mem.Read<T>(addresses[0], isRelative);
 
             var temp = _mem.Read<IntPtr>(addresses[0], isRelative);
+            if (temp == IntPtr.Zero)
+                throw new InvalidOperationException("First addresses returned 0");
 
             for (var i = 1; i < addresses.Length - 1; i++)
                 temp = _mem.Read<IntPtr>(temp + (int) addresses[i], isRelative);

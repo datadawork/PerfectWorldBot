@@ -22,6 +22,13 @@ namespace PerfectWorldBot.Managers {
             SendPacket(packetStr);
         }
 
+        public static void PickUpItem(uint objectId, uint itemId) {
+            objectId = ReverseBytes(objectId);
+            itemId = ReverseBytes(itemId);
+            var packetStr = $"0600{objectId:X8}{itemId:X8}";
+            SendPacket(packetStr);
+        }
+
         internal static void SendPacket(string packetDataStr) {
             var packetData = StringToByteArray(packetDataStr);
             using (var packetPtr = Core.Memory.Memory.Allocate(packetData.Length)) {

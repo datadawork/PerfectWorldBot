@@ -89,8 +89,10 @@
     <Compile Include="Managers\GameObjectManager.cs" />
     <Compile Include="Managers\PacketManager.cs" />
     <Compile Include="Objects\ElsePlayer.cs" />
+    <Compile Include="Objects\Matter.cs" />
     <Compile Include="Objects\Monster.cs" />
     <Compile Include="Objects\NpcServer.cs" />
+    <Compile Include="Objects\Pet.cs" />
     <Compile Include="Objects\Player.cs" />
     <Compile Include="Objects\GameObject.cs" />
     <Compile Include="Objects\HostPlayer.cs" />
@@ -99,11 +101,13 @@
     <Compile Include="Offsets\ElsePlayerOffsets.cs" />
     <Compile Include="Offsets\GameFunctions.cs" />
     <Compile Include="Offsets\HostPlayerOffsets.cs" />
+    <Compile Include="Offsets\MatterOffsets.cs" />
     <Compile Include="Offsets\MonsterOffsets.cs" />
     <Compile Include="Offsets\NpcOffsets.cs" />
     <Compile Include="Offsets\NpcServerOffsets.cs" />
     <Compile Include="Offsets\ObjectPointer.cs" />
     <Compile Include="Offsets\Offsets.cs" />
+    <Compile Include="Offsets\PetOffsets.cs" />
     <Compile Include="Offsets\PlayerOffsets.cs" />
     <Compile Include="Logging.cs" />
     <Compile Include="Program.cs" />

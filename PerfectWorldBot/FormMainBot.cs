@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
+
 using PerfectWorldBot.Managers;
+using PerfectWorldBot.Objects;
 
 namespace PerfectWorldBot {
     public partial class FormMainBot : Form {
@@ -52,9 +55,13 @@ namespace PerfectWorldBot {
             if (!Core.IsInGame) return;
             Logging.Clear();
             //PacketManager.ClearTarget();
-            var target = Core.Me.CurrentTarget ?? Core.Me;
-            Logging.Log($"Casting Spell: {1381:X}\nTarget: {target}");
-            PacketManager.UseSkillOnTargetId(1381, target.ObjectId);
+            //var target = Core.Me.CurrentTarget ?? Core.Me;
+            //Logging.Log($"Casting Spell: {1381:X}\nTarget: {target}");
+            //PacketManager.UseSkillOnTargetId(1381, target.ObjectId);
+            foreach (var mat in GameObjectManager.GetObjectsByType<Matter>().Where(m=>m.IsItem)) {
+                Logging.Log($"Picking up: {mat}, {mat.ItemId}");
+                PacketManager.PickUpItem(mat.ObjectId, mat.ItemId);
+            }
         }
     }
 }

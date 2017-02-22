@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+
 using PerfectWorldBot.Enums;
 using PerfectWorldBot.Objects;
 
@@ -43,7 +44,20 @@ namespace PerfectWorldBot.Managers {
                     yield return new NpcServer(ptr);
                 else if (type == GameObjectType.Monster)
                     yield return new Monster(ptr);
+                else if (type == GameObjectType.Pet)
+                    yield return new Pet(ptr);
             }
+            var matList = Core.Memory.ReadEx<IntPtr>(Core.Offsets.Objects.MatterListPtr);
+            for (var i = 0; i < 769; i++) {
+                var p = Core.Memory.ReadEx<IntPtr>(matList + i * 4);
+                if (p == IntPtr.Zero) continue;
+                var ptr = Core.Memory.ReadEx<IntPtr>(p + 0x4);
+                if (ptr == IntPtr.Zero) continue;
+                var type = (GameObjectType)Core.Memory.ReadEx<byte>(ptr + Core.Offsets.Objects.ObjectType);
+                if (type == GameObjectType.Matter)
+                    yield return new Matter(ptr);
+            }
+
         }
 
         public static GameObject GetObjectById(uint ObjectId) {
